@@ -1,0 +1,55 @@
+{
+  "name": "codecept-playwrite-bug-report",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "PORTAL": ".",
+    "PORTAL:start": "cross-env PORTAL='portal' NODE_OPTIONS=\"-r esm\" DEBUG=pw:* codeceptjs run --steps --verbose ",
+    "CODECEPT": ".",
+    "updateDefs": "cross-env NODE_OPTIONS=\"-r esm\" codeceptjs def .",
+    "createHelper": "cross-env NODE_OPTIONS=\"-r esm\" codeceptjs gh",
+    "LINT": ".",
+    "lint:ts": "eslint --fix --ext .js,.jsx,.ts,.tsx ./",
+    "typecheck": "tsc --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn lint:ts && yarn typecheck"
+    }
+  },
+  "lint-staged": {
+    "packages/**/*.{js,jsx,ts,tsx}": [
+      "yarn lint:ts"
+    ]
+  },
+  "dependencies": {
+    "allure-commandline": "2.13.8",
+    "axios": "0.21.1",
+    "chai": "4.2.0",
+    "codeceptjs": "3.1.3",
+    "cross-env": "7.0.3",
+    "dotenv": "8.2.0",
+    "dotenv-parse-variables": "1.0.1",
+    "esm": "3.2.25",
+    "form-data": "4.0.0",
+    "joi": "17.3.0",
+    "lodash": "4.17.21",
+    "playwright": "1.16.3",
+    "ts-node": "9.1.1",
+    "typescript": "4.1.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.14.1",
+    "@typescript-eslint/parser": "4.14.1",
+    "eslint": "7.19.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-promise": "4.2.1",
+    "husky": "4.3.8",
+    "lint-staged": "10.5.3",
+    "prettier": "2.2.1"
+  }
+}
