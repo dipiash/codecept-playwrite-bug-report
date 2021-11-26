@@ -69,6 +69,18 @@ exports.config = {
       waitForNavigation: 'load',
       browser: 'chromium',
       ignoreHTTPSErrors: true,
+      // chromium: {
+      //   timeout: 30000,
+      //   browserWSEndpoint:
+      //     'ws://MOON_INSTANCE/playwright/chromium/playwright-1.16.3?headless=false&enableVideo=true&name=TEST' +
+      //     '&arg=--no-sandbox&arg=--disable-setuid-sandbox' +
+      //     '&arg=--disable-dev-shm-usage' +
+      //     '&arg=--disable-accelerated-2d-canvas' +
+      //     '&arg=--no-first-run' +
+      //     '&arg=--no-zygote' +
+      //     '&arg=--single-process' +
+      //     '&arg=--disable-gpu',
+      // },
     },
   },
   include: {
