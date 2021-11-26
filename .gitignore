@@ -196,3 +196,4 @@ packages/admin/output
 packages/portal/output
 
 .vscode
+.DS_Store
